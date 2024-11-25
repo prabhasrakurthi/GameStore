@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #548687, #86c3b7);
+  text-align: center;
+  font-family: "Arial", sans-serif;
+  color: #fff;
+}
+
+.container {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game {
+  height: 60vmin;
+  width: 60vmin;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5vmin;
+}
+
+.box {
+  height: 18vmin;
+  width: 18vmin;
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  font-size: 8vmin;
+  color: #b0413e;
+  background: linear-gradient(145deg, #fff7d1, #ffeb90);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.box:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+#reset-btn,
+#new-btn {
+  padding: 1rem;
+  font-size: 1.25rem;
+  background: linear-gradient(135deg, #191913, #3e3e3e);
+  color: #fff;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#reset-btn:hover,
+#new-btn:hover {
+  background: linear-gradient(135deg, #3e3e3e, #5b5b5b);
+  transform: scale(1.05);
+}
+
+#msg {
+  color: #ffffc7;
+  font-size: 5vmin;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.msg-container {
+  height: 100vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.hide {
+  display: none;
+}
+
+.back-button {
+  position: absolute; /* Ensures the button is positioned at the corner */
+  top: 1rem; /* Distance from the top */
+  left: 1rem; /* Distance from the left */
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #191913;
+  color: #fff;
+  border: none;
+  border-radius: 50%; /* Makes it circular */
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  font-size: 1.5rem;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #333;
+  transform: scale(1.1);
+}
+
+.back-button:before {
+  content: "←"; /* Adds the left arrow symbol */
+  font-weight: bold;
+}

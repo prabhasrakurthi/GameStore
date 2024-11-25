@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #548687, #86c3b7);
+    color: #fff;
+  }
+  
+  .landing-page, 
+  .game-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 2rem; /* Added gap for consistency in spacing */
+  }
+  
+  .logo img {
+    width: 200px;
+  }
+  
+  button {
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    color: #fff;
+    background: #191913;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Added smooth scaling */
+  }
+  
+  button:hover {
+    background-color: #333; /* Consistent property naming */
+    transform: scale(1.05); /* Added a hover scale effect */
+  }
+  
+  .game-card {
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    color: #fff;
+    background: #4e4e4e;
+    border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Added easing for smooth transitions */
+  }
+  
+  .game-card:hover {
+    transform: scale(1.1);
+    background-color: #333; /* Consistent property naming */
+  }
+  
+  .hide {
+    display: none;
+  }
+  
