@@ -6,45 +6,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const message = document.getElementById("message");
     const solver = new SudokuSolver();
 
-    // A set of predefined puzzles
-    const puzzles = [
-        [
-            ["5", "3", "", "", "7", "", "", "", ""],
-            ["6", "", "", "1", "9", "5", "", "", ""],
-            ["", "9", "8", "", "", "", "", "6", ""],
-            ["8", "", "", "", "6", "", "", "", "3"],
-            ["4", "", "", "8", "", "3", "", "", "1"],
-            ["7", "", "", "", "2", "", "", "", "6"],
-            ["", "6", "", "", "", "", "2", "8", ""],
-            ["", "", "", "4", "1", "9", "", "", "5"],
-            ["", "", "", "", "8", "", "", "7", "9"],
-        ],
-        [
-            ["", "", "9", "7", "4", "8", "", "", ""],
-            ["7", "", "", "", "", "", "", "", "2"],
-            ["", "2", "", "1", "", "9", "", "", ""],
-            ["", "", "7", "", "", "", "2", "4", ""],
-            ["", "6", "4", "", "1", "", "5", "9", ""],
-            ["", "9", "8", "", "", "", "3", "", ""],
-            ["", "", "", "8", "", "3", "", "2", ""],
-            ["8", "", "", "", "", "", "", "", "6"],
-            ["", "", "", "2", "7", "5", "9", "", ""],
-        ],
-        [
-            ["1", "", "", "4", "8", "", "", "", "6"],
-            ["", "", "6", "", "", "", "9", "", ""],
-            ["", "", "7", "", "5", "", "4", "", ""],
-            ["", "2", "", "", "", "6", "", "7", ""],
-            ["", "5", "", "", "", "", "", "3", ""],
-            ["", "8", "", "1", "", "", "", "4", ""],
-            ["", "", "8", "", "6", "", "2", "", ""],
-            ["", "", "2", "", "", "", "5", "", ""],
-            ["9", "", "", "", "7", "2", "", "", "4"],
-        ],
+    // Fixed template with empty strings for blank cells
+    const initialPuzzle = [
+        ["5", "3", "", "", "7", "", "", "", ""],
+        ["6", "", "", "1", "9", "5", "", "", ""],
+        ["", "9", "8", "", "", "", "", "6", ""],
+        ["8", "", "", "", "6", "", "", "", "3"],
+        ["4", "", "", "8", "", "3", "", "", "1"],
+        ["7", "", "", "", "2", "", "", "", "6"],
+        ["", "6", "", "", "", "", "2", "8", ""],
+        ["", "", "", "4", "1", "9", "", "", "5"],
+        ["", "", "", "", "8", "", "", "7", "9"],
     ];
-
-    // Function to select a random puzzle
-    const getRandomPuzzle = () => puzzles[Math.floor(Math.random() * puzzles.length)];
 
     // Create the grid
     for (let i = 0; i < 81; i++) {
@@ -77,9 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
-    // Initialize the board with a random puzzle
-    let currentPuzzle = getRandomPuzzle();
-    setBoardData(currentPuzzle);
+    // Initialize board with the fixed template
+    setBoardData(initialPuzzle);
 
     // Solve the Sudoku puzzle
     solveBtn.addEventListener("click", () => {
@@ -95,10 +67,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Reset the board to a new random puzzle
+    // Reset the board to the initial template
     resetBtn.addEventListener("click", () => {
-        currentPuzzle = getRandomPuzzle();
-        setBoardData(currentPuzzle);
+        setBoardData(initialPuzzle);
         message.textContent = "";
     });
 
